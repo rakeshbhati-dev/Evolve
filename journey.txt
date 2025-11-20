@@ -1,0 +1,27 @@
+Readme:
+A MERN-based application currently under development.
+The project is being built step-by-step with a focus on clean architecture and scalable structure.
+
+Tech Stack
+
+MongoDB
+
+Express
+
+React
+
+Node.js
+
+Setup
+
+Clone the repository
+
+Run npm install inside both /client and /server
+
+Add your environment variables
+
+Start backend and frontend as needed
+
+Status
+
+Active development.

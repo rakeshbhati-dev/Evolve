@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="240px" height="240px" viewBox="0 0 240 240" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
+    <title>grow</title>
+    <desc>Created with Sketch.</desc>
+    <g id="grow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="bounding-box">
+            <polygon id="shape" points="0 0 240 0 240 240 0 240"></polygon>
+        </g>
+        <rect id="Rectangle" stroke="#46AAF7" stroke-width="10" fill="#E8F7FF" x="175" y="80" width="20" height="115" rx="8"></rect>
+        <rect id="Rectangle-Copy" stroke="#46AAF7" stroke-width="10" fill="#E8F7FF" x="135" y="115" width="20" height="80" rx="8"></rect>
+        <rect id="Rectangle-Copy-2" stroke="#46AAF7" stroke-width="10" fill="#E8F7FF" x="95" y="135" width="20" height="60" rx="8"></rect>
+        <rect id="Rectangle-Copy-3" stroke="#46AAF7" stroke-width="10" fill="#E8F7FF" x="55" y="165" width="20" height="30" rx="8"></rect>
+        <rect id="Rectangle" fill="#46AAF7" x="30" y="190" width="180" height="10"></rect>
+        <rect id="Rectangle-Copy-4" fill="#46AAF7" transform="translate(97.000000, 100.000000) rotate(-37.000000) translate(-97.000000, -100.000000) " x="22" y="95" width="150" height="10"></rect>
+        <rect id="Rectangle" fill="#46AAF7" x="152.853663" y="46" width="10" height="26"></rect>
+        <rect id="Rectangle-Copy-5" fill="#46AAF7" transform="translate(150.000000, 51.070759) rotate(-270.000000) translate(-150.000000, -51.070759) " x="145" y="38.0707592" width="10" height="26"></rect>
+    </g>
+</svg>
