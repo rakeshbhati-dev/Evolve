@@ -23,4 +23,4 @@ function ListLayout({
   )
 }
 
-export default ListLayout
+export default React.memo(ListLayout)

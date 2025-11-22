@@ -7,7 +7,7 @@ function Button({
     buttonStyle
 }) {
   return (
-    <button type={type} className={`border border-stone-400 px-3 py-2 rounded cursor-pointer ${buttonStyle}`}>{value}</button>
+    <button type={type} className={`border border-stone-400 px-3 py-2 rounded cursor-pointer ${buttonStyle}`} onClick={onClick}>{value}</button>
   )
 }
 
