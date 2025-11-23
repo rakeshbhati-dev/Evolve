@@ -1,9 +1,14 @@
 import React from 'react'
 import ListItem from '../components/ListItem'
 
-function ListLayout({
-    list=[]
-}) {
+function ListLayout({list=[],setList}){
+
+    function deleteHandler(id){
+        if(confirm("Do you want to delete item?")){
+            let updatedList=list.filter((item)=>item.id!==id)
+            setList(updatedList)
+        }
+    }
   return (
     <div className='py-5 px-1'>
     {
@@ -12,7 +17,7 @@ function ListLayout({
             {
                 list.map((item)=>{
                     return(
-                        <ListItem item={item.item} key={item.id}></ListItem>
+                        <ListItem item={item} key={item.id} onDelete={deleteHandler}></ListItem>
                     )
                 })
             }

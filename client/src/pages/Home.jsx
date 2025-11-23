@@ -33,7 +33,7 @@ function Home() {
             <Input id='inpt' name='item' value={listItem} placeholder='Enter a Value' divStyle='w-[90%]' onChange={(e)=>setListItem(e.target.value)} errorMessage={errroMessage}></Input>
             <Button value='Add' buttonStyle='font-semibold bg-blue-400 text-white' onClick={addListItem}></Button>
           </div>
-          <ListLayout list={list}></ListLayout>
+          <ListLayout list={list} setList={setList}></ListLayout>
         </div>
       </main>
     </>
