@@ -1,7 +1,7 @@
 import React from 'react'
 import ListItem from '../components/ListItem'
 
-function ListLayout({list=[],setList}){
+function ListLayout({list=[],setList,onEdit}){
 
     function deleteHandler(id){
         if(confirm("Do you want to delete item?")){
@@ -9,6 +9,7 @@ function ListLayout({list=[],setList}){
             setList(updatedList)
         }
     }
+
   return (
     <div className='py-5 px-1'>
     {
@@ -17,7 +18,7 @@ function ListLayout({list=[],setList}){
             {
                 list.map((item)=>{
                     return(
-                        <ListItem item={item} key={item.id} onDelete={deleteHandler}></ListItem>
+                        <ListItem item={item} key={item.id} onDelete={deleteHandler} onEdit={onEdit}></ListItem>
                     )
                 })
             }
