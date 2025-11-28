@@ -1,39 +1,45 @@
-let itemList=[]
-const getAllItem=(req,res)=>{
-    return res.status(200).json({message:"Item Founds",itemList:itemList})
+import Item from '../models/items.model.js'
+
+let demo = []
+const getAllItem = async (req, res) => {
+    try {
+        const itemList = await Item.find()
+        return res.status(200).json({ message: "Item Founds", itemList: itemList })
+    } catch (error) {
+        return res.status(500).json({ message: "Something went wrong.", error: error })
+    }
 }
 
-const addItem=(req,res)=>{
-   const {item}=req.body
-   if(!item) return res.status(400).json({message:"No item provided"})
-   const obj={
-    id:crypto.randomUUID(),
-    item:item
-   }
-
-   itemList.push(obj)
-   return res.status(201).json({message:"Item Added Successfully.",item:obj})
+const addItem = async (req, res) => {
+    const { item } = req.body
+    try {
+        let result = await Item.create({ item: item })
+        return res.status(201).json({ message: "Item Added Successfully.", item: result })
+    } catch (error) {
+        return res.status(500).json({ message: "Something went wrong.", error: error })
+    }
 }
 
-const updateItem=(req,res)=>{
-    const {item}=req.body
-    const {id}=req.params
-    if(!item) return res.status(400).json({message:"No Item provided."});
-    let result= itemList.find((ele)=>ele.id===id)
-    if(!result) return res.status(404).json({message:"No item found."});
-
-    let updatedItemList=itemList.map((ele)=>ele.id===id?{id:id,item:item}:ele)
-    itemList=updatedItemList
-    return res.status(200).json({message:"Item updated Successfully",itemList:itemList})
+const updateItem = async (req, res) => {
+    const { item } = req.body
+    const { id } = req.params
+    if (!item) return res.status(400).json({ message: "No Item provided." });
+    try {
+        let result = await Item.findByIdAndUpdate(id, { item: item }, { new: true })
+        return res.status(200).json({ message: "Item updated Successfully", item: result })
+    } catch (error) {
+        return res.status(500).json({ message: "Something went wrong.", error: error })
+    }
 }
 
-const deleteItem=(req,res)=>{
-    const {id}=req.params
-    let findItem=itemList.find((ele)=>ele.id===id)
-    if(!findItem) return res.status(404).json({message:"No item found"});
-
-    itemList=itemList.filter((ele)=>ele.id!==id)
-    return res.status(200).json({message:"Item Deleted Successfully",itemList:itemList})
+const deleteItem = async (req, res) => {
+    const { id } = req.params
+    try {
+        await Item.findByIdAndDelete(id)
+        return res.status(200).json({ message: "Item Deleted Successfully" })
+    } catch (error) {
+        return res.status(500).json({ message: "Something went wrong.", error: error })
+    }
 }
 
-export {getAllItem,addItem,updateItem,deleteItem}
+export { getAllItem, addItem, updateItem, deleteItem }
